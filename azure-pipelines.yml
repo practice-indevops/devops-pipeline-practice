@@ -1,0 +1,44 @@
+
+# azure-pipelines.yml
+# Triggers on pushes to main (and PRs from any branch to main)
+trigger:
+  branches:
+    include:
+      - main
+
+pr:
+  branches:
+    include:
+      - main
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - checkout: self
+    fetchDepth: 1
+
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '3.11'          # Any supported version is fine
+      addToPath: true
+
+  - script: |
+      python --version
+      pip --version
+    displayName: 'Check Python & pip versions'
+
+  - script: |
+      python -m pip install --upgrade pip
+      if [ -f "requirements.txt" ]; then pip install -r requirements.txt; fi
+    displayName: 'Install dependencies (if any)'
+
+  - script: |
+      echo "Running app..."
+      python app.py
+    displayName: 'Run app.py'
+
+  - script: |
+      echo "Running validation..."
+      python validate.py
+    displayName: 'Run validate.py'
