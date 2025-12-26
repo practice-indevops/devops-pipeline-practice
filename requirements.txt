@@ -1,2 +1,3 @@
-printf "# No dependencies for now\n" > requirements.txt
+#adding below script as a comment 
+#printf "# No dependencies for now\n" > requirements.txt
 
