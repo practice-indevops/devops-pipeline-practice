@@ -1,1 +1,1 @@
-# No dependencieis for now
+echo "# No dependencieis for now"
