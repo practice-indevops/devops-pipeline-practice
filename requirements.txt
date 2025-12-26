@@ -1,1 +1,1 @@
-printf '# No dependencies for now\n'
+# No dependencieis for now
