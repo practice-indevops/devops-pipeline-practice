@@ -1,1 +1,1 @@
-echo "# No dependencieis for now"
+printf "# No dependencies for now\n"
