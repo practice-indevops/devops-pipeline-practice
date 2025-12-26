@@ -1,1 +1,2 @@
-printf "# No dependencies for now\n"
+printf "# No dependencies for now\n" > requirements.txt
+
