@@ -1,1 +1,1 @@
-printf 'print("Hello DevOps")\n'
+print("Hello DevOps")
